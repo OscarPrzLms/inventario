@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/inventario', [App\Http\Controllers\ProductoController::class, 'index'])->name('inventario.index');
+Route::get('/inventario/create', [App\Http\Controllers\ProductoController::class, 'create'])->name('inventario.create');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');  
+ 
